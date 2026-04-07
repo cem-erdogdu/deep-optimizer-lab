@@ -1,0 +1,25 @@
+# XOR Experiment Configuration
+# A simple non-linearly separable problem requiring hidden layers
+
+experiment:
+  name: xor_experiment
+  seed: 42
+
+dataset:
+  name: xor
+  noise_std: 0.0  # Add noise for regularization
+
+model:
+  name: mlp
+  input_dim: 2
+  hidden_dims: [8, 8]  # Two hidden layers with 8 units each
+  output_dim: 2  # Binary classification (2 classes)
+  activation: relu
+
+training:
+  epochs: 200
+  batch_size: 4  # Full batch for 4 samples
+  learning_rate: 0.01
+
+output:
+  save_dir: outputs
